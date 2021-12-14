@@ -9,6 +9,11 @@ FDFFFC - WHITISH YELLOW
 Materialize CSS v 1.0.0
 */
 
+#nav-wrapper, #logoImg {
+    height: 64px;
+    padding-left: 1%;
+    padding-right: .5%;
+
 /* flex container for the main container elements */
 .flex {
     display: flex;
