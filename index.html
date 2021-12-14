@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -16,12 +16,36 @@
 </head>
 <body>
     <header>
-    
+      <nav>
+          
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="sass.html">Sass</a></li>
+              <li><a href="badges.html">Components</a></li>
+              <li><a href="collapsible.html">JavaScript</a></li>
+            </ul>
+          </div>
+
+    <div>
+        <form>
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+      </div>
+  </nav>
     </header>
 
     <main>
-        <div id="breweryData"></div>
-        <div id="staticMap"></div>
+        <div id="breweryData">
+            <h1>Breweries</h1>
+        </div>
+        <div id="staticMap">
+            <h1>Map</h1>
+        </div>
     </main>
     <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
