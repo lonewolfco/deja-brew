@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Deja Brew</title>
@@ -50,13 +49,18 @@
       <div id ="flex" class="row">
 
         <!-- Brewery Data Content Container -->
-        <div id="main-container" class="col m6 center-align">
-            <h2 class ="center-align" >Breweries</h2>
+        <div id="main-container" class="col s12 m6 center-align">
+            <h2 id = "content-title" class ="center-align">Breweries</h2>
         </div>
 
         <!-- Static Map Content Container -->
-        <div id="main-container" class="col m6 center-align">
-            <h2 class ="center-align" >Map</h2>
+        <div id="main-container" class="col s12 m6 center-align">
+            <div id="map-container" class="content-container">
+
+                <h2 id ="content-title" class ="center-align white-text z-depth-2" >Map</h2>
+
+                <div id="map-element"> </div>
+           </div>
         </div>
 
       </div>
@@ -69,7 +73,8 @@
     <!-- footer -->
     <footer></footer>
 
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="./assets/js/script.js"></script>
 
 </body>
