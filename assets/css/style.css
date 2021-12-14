@@ -13,4 +13,17 @@ Materialize CSS v 1.0.0
     height: 64px;
     padding-left: 1%;
     padding-right: .5%;
+
+/* flex container for the main container elements */
+.flex {
+    display: flex;
+    margin: auto;
+}
+
+/* shows border of the container elements for each sides content */
+#main-container {
+    align-content: center;
+    border: 5px black solid;
+    margin-top: 100px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }

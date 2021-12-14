@@ -7,12 +7,14 @@
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <title>Document</title>
+    <title>Deja Brew</title>
+    <link rel="shortcut icon" type="images/png" href="./assets/images/4.png"/>
 
 </head>
 <body>
@@ -44,13 +46,31 @@
     <br>
 
     <main>
-        <div id="breweryData">
-            <h1>Breweries</h1>
+      <!-- flex container for the two sections (brewery list & static map) of the main content -->
+      <div id ="flex" class="row">
+
+        <!-- Brewery Data Content Container -->
+        <div id="main-container" class="col m6 center-align">
+            <h2 class ="center-align" >Breweries</h2>
         </div>
-        <div id="staticMap">
-            <h1>Map</h1>
+
+        <!-- Static Map Content Container -->
+        <div id="main-container" class="col m6 center-align">
+            <h2 class ="center-align" >Map</h2>
         </div>
+
+      </div>
+
+
     </main>
+
+
+
+    <!-- footer -->
+    <footer></footer>
+
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+
 </body>
 </html>
