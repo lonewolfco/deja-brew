@@ -47,3 +47,10 @@ body {
 }
 
 
+.brew-name {
+    font-weight: bolder;
+}
+
+.brew-website {
+    text-decoration: underline;
+}
