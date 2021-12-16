@@ -30,6 +30,8 @@ body {
     align-content: center;
     /* border: 5px black solid; */
     margin-top: 100px;
+    width: 50%
+    
 }
 
 .content-container {
@@ -43,6 +45,10 @@ body {
     border-radius:15px;
 }
 
+#breweries-list {
+    height: 420px;
+    overflow: auto;
+}
 
 #content-title {
     background-color: #D4A71B;
