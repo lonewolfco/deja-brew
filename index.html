@@ -8,10 +8,9 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- link to utilize materialize's icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Deja Brew</title>
     <link rel="shortcut icon" type="images/png" href="./assets/images/4.png"/>
@@ -19,8 +18,8 @@
 </head>
 <body>
     <header>
-      <nav>
-          
+        <nav>         
+
         <div class="nav-wrapper #ffca28 amber lighten-1">
             <img id="logoImg" src="./assets/images/blackoutline.png">
             <a href="#" class="brand-logo">Deja Brew</a>
@@ -30,18 +29,22 @@
               <li><a href="collapsible.html">JavaScript</a></li>
             </ul>
           </div>
+        </nav>
 
-    <div>
-        <form autocomplete="off">
-          <div class="input-field">
-            <input id="search" placeholder="Enter city, state, or zip code" type="search" required>
-            <label class="label-icon" for="search"><i class="material-icons"> </i></label>
-            <i class="material-icons">close</i>
+        <div id="search-box" class="row container">
+          <div class="input-field col s12">
+            <h5 class="left-align">
+              <i class="small material-icons">search</i>Type a city...
+            </h5>
+            <input autocomplete="off" placeholder="Start typing..." id="search" type="text" class="validate" />
           </div>
-        </form>
-      </div>
-  </nav>
-    </header>
+        </div>
+        <div id="matchList"></div>
+        <a id="searchBtn" class="waves-effect waves-dark btn">search</a>
+
+</header>
+    <br>
+    <br>
     <br>
     <br>
 
@@ -50,14 +53,52 @@
       <div id ="flex" class="row">
 
         <!-- Brewery Data Content Container -->
-        <div id="main-container" class="col m6 center-align">
+
+        <div id="main-container" class="col s12 m7">
             <h2 class ="center-align" >Breweries</h2>
+              <table id="brewery-table" class="breweries-table striped">
+                <tr>
+                  <th id="table-header" colspan="2">Breweries Near You</th>           
+                </tr>
+                <tr>
+                  <td>Brewery Name
+                    <p>Test</p>
+                  </td> 
+                </tr>
+                <tr>
+                  <td>Lane 2</td>
+                </tr>
+                <tr>
+                  <td>Lane 3</td>
+                </tr>
+              </table>
+
         </div>
+        <!-- End Brewery Data Div -->
 
         <!-- Static Map Content Container -->
-        <div id="main-container" class="col m6 center-align">
-            <h2 class ="center-align" >Map</h2>
+        <div id="main-container" class="col s10 m5">
+<!-- 
+          <div class="row">
+            <div class="col s12 m10 l10"> -->
+              <div id="map-container"class="card z-depth-3">
+                <div id = "map-image" class="card-image">
+                  <img id= "map" alt="map" src="https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=350x300&scale=1&maptype=roadmap&markers=size%3Alrg%7Ccolor%3Ablack%7CSeattle,WA&center=Seattle,WA&key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI">
+                </div>
+                <div id ="map-card" class="card-content">
+                  <p>We could display brewery information here too!</p>
+
+                  <button id="submit-btn" class="btn waves-effect grey darken-4" type="submit"> Submit
+                    <i class="material-icons right">directions_run</i>
+                  </button>
+
+                </div>
+                
+              </div>
+
         </div>
+
+      <!-- End Static Map Container Div -->
 
       </div>
 
@@ -69,7 +110,8 @@
     <!-- footer -->
     <footer></footer>
 
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="./assets/js/script.js"></script>
 
 </body>
