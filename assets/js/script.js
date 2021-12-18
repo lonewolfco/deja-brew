@@ -1,15 +1,16 @@
-
-var input = document.querySelector("#search");
+var input = document.querySelector("#autocomplete-input");
+let city = document.querySelector("#autocomplete-input").value;
 var matchList = document.querySelector("#matchList");
 var searchBtn = document.querySelector("#searchBtn");
 var api = "https://api.openbrewerydb.org/breweries?by_city=";
+
 
 
 //search API ad filter it
 
 
 function formSubmit() {
-  let city = document.querySelector("#search").value;
+  let city = document.querySelector("#autocomplete-input").value;
   let cityNospace = city.split(' ').join("%20");
   let url = "https://api.openbrewerydb.org/breweries?by_city=" + cityNospace;
 
@@ -18,28 +19,59 @@ console.log(url);
 
  fetch(url)
   .then(function (response) {
-  return response.json();
- })
-  .then(function (data) {
+    console.log(response);
+    if (response.ok) {
+      response.json().then(function(data) {
+        console.log(data)
+      })
+    }
 });
 };
 
 
 
+// async function asyncFunc() {
+//   const results = await fetch("https://api.openbrewerydb.org/breweries?by_city=");
+//   cities = await results.json();
+//   //removeNull();
+//   //searchCities('');
+//   console.log(cities)
+// }
 
-input.addEventListener("keydown", function(e) {
-    var keyCode = e.which || e.keyCode;
-    if (keyCode ==13)
-    formSubmit();
-});
-
-searchBtn.addEventListener("click", function() {
-  formSubmit();
-}); 
+// function removeNull (cities) {
+//   return cities.filter (x => x !== null)
+// }
 
 
-//AUTOCOMPLETE ATTEMPT
-// var searchCity = async searchBox => {
+// const searchCities = searchText => {
+//   for (let city of cities) {
+//     const regEx = new RegExp(`^${searchText}`, 'gi');
+//     city.match = city.name.match(regEx) || city.abbr.match(regEx);
+//   }
+//   //outputHTML();
+// }
+
+
+
+
+
+// $(document).ready(function(){
+//   $('input.autocomplete').autocomplete({
+//     source: function (request, response) {
+//       $.getJSON(
+//         {url: "https://api.openbrewerydb.org/breweries?by_city=${input.autocomplete}",
+//         success: console.log(data)
+//              })
+//             }
+//           })
+//         })
+  
+             
+
+
+// // AUTOCOMPLETE ATTEMPT
+// var searchCity = async function(searchBox) {
+//   return searchBox.json();
 //   var results = await fetch('city');
 //   var cities = await results.json();
   
@@ -57,3 +89,14 @@ searchBtn.addEventListener("click", function() {
 //   outputHtml(fits);
 // };
 
+//event listeners for searchf function
+
+input.addEventListener("keydown", function(e) {
+  var keyCode = e.which || e.keyCode;
+  if (keyCode ==13)
+  generateBreweryData();
+});
+
+searchBtn.addEventListener("click", function() {
+generateBreweryData();
+}); 

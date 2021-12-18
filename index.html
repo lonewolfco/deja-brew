@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- link to utilize materialize's icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
 
     <title>Deja Brew</title>
@@ -36,10 +40,10 @@
             <h5 class="left-align">
               <i class="small material-icons">search</i>Type a city...
             </h5>
-            <input autocomplete="off" placeholder="Start typing..." id="search" type="text" class="validate" />
+            <input autocomplete="off" placeholder="Start typing..." id="autocomplete-input" type="text" class="validate autocomplete" />
+            <label for="autocomplete-input" id="matchList"></label>
           </div>
         </div>
-        <div id="matchList"></div>
         <a id="searchBtn" class="waves-effect waves-dark btn">search</a>
 
 </header>
@@ -112,7 +116,9 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="./assets/js/map.js"></script>
     <script type="text/javascript" src="./assets/js/script.js"></script>
+    
 
 </body>
 </html>
