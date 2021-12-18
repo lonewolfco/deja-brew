@@ -15,8 +15,6 @@ Materialize CSS v 1.0.0
     --content-background: #ECE6D3;
     --content-containers: #DACDA9;
     --body-background: #FDFFFC;
-
-
 }
 
 body {
@@ -30,15 +28,16 @@ body {
 }
 
 #search-box {
+    padding-left: .5%;
     margin-left: 0%;
+    height:50px;
+    background-color: black;
 }
 
 /* shows border of the container elements for each sides content */
 #main-container {
     margin-top: 70px;
 }
-
-
 
 #map-card{
     background-color: var(--secondary);
@@ -48,5 +47,3 @@ body {
 #map-container {
     border-radius: 0px 0px 15px 15px;
 }
-
-

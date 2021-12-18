@@ -38,10 +38,8 @@ console.log(url);
 //   console.log(cities)
 // }
 
-// function removeNull (cities) {
-//   return cities.filter (x => x !== null)
-// }
 
+// // AUTOCOMPLETE ATTEMPTS
 
 // const searchCities = searchText => {
 //   for (let city of cities) {
@@ -50,10 +48,6 @@ console.log(url);
 //   }
 //   //outputHTML();
 // }
-
-
-
-
 
 // $(document).ready(function(){
 //   $('input.autocomplete').autocomplete({
@@ -65,11 +59,7 @@ console.log(url);
 //             }
 //           })
 //         })
-  
-             
-
-
-// // AUTOCOMPLETE ATTEMPT
+ 
 // var searchCity = async function(searchBox) {
 //   return searchBox.json();
 //   var results = await fetch('city');
