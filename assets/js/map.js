@@ -1,8 +1,21 @@
 // declare variables
 var map = document.querySelector("#map");
 var input = document.querySelector("#search");
+let coordinates = JSON.parse(localStorage.getItem("brewcord")) || [];
+// var mapBtnClick = document.querySelector("map-btn");
 // var breweryLocation = 'Vashon,WA';
 var tableContainer = document.querySelector("#brewery-table");
+
+
+input.addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      localStorage.removeItem("brewcord");
+      coordinates = [];
+      formSubmit(event);
+    }
+  });
+
 
 function formSubmit(event) {
     event.preventDefault();
@@ -53,38 +66,44 @@ function generateBreweryData (cityName) {
             brewWebsite.textContent = data[i].website_url;
 
             var buttonContainer = document.createElement('td');
+            buttonContainer.classList.add ("mapbtn-container");
             // rowContent.classList.add("col s4");
             
-            var buttonValue = data[i].latitude + ", " + data[i].longitude;
-            console.log(buttonValue);
-            // buttons to view the brewery on a map
-            var mapButton = document.createElement('button');
-            mapButton.className = "btn waves-effect grey darken-4";
-            mapButton.setAttribute("type", "submit");
-            mapButton.textContent = "View on the Map!";
-            mapButton.setAttribute("data-cord", buttonValue);
-            console.log(mapButton.dataset.cord);
-            // icon on the map buttons
-            var btnIcon = document.createElement("i");
-            btnIcon.className = "material-icons right";
-            btnIcon.textContent = "location_searching";
-            mapButton.append(btnIcon);
+            var buttonValue = data[i].latitude + "," + data[i].longitude;
+            // console.log(buttonValue);
 
-            buttonContainer.append(mapButton);
+            coordinates.push(buttonValue);
+            localStorage.setItem("brewcord", JSON.stringify(coordinates));
+            console.log(coordinates);
 
-
-
+                // buttons to view the brewery on a map
+                var mapButton = document.createElement('button');
+                mapButton.className = " map-btn btn waves-effect grey darken-4";
+                mapButton.setAttribute("type", "submit");
+                mapButton.textContent = "View on Map!";
+                mapButton.setAttribute("value", coordinates[i]);
+                // mapButton.setAttribute("data-cord", buttonValue);
+                // console.log(mapButton.dataset.cord);
+                // icon on the map buttons
+                var btnIcon = document.createElement("i");
+                btnIcon.className = "material-icons right";
+                btnIcon.textContent = "location_searching";
+                mapButton.append(btnIcon);
+      
+                buttonContainer.append(mapButton);
+                // mapButton.addEventListener("click", generateMap(mapButton.value));
+          
+            
             rowEl.append(rowContent, buttonContainer);
             rowContent.append(brewName, breweryAddress, brewWebsite);
 
-            mapButton.addEventListener("click",function(event) {
-                event.target.dataset.cord;
-                map.src="";
-                var mapRequestURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=350x300&scale=1&maptype=roadmap&markers=size%3Alrg%7Ccolor%3Ablack%7C' + mapButton.dataset.cord + '&center=' + mapButton.dataset.cord + 'key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI';
-                console.log(mapRequestURL);
-                map.src = mapRequestURL;
-                // generateMap(mapButton.value);
-            })
+            // mapButton.addEventListener("click",function() {
+            //     map.src="";
+            //     var mapRequestURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=350x300&scale=1&maptype=roadmap&markers=size%3Alrg%7Ccolor%3Ablack%7C' + mapButton.value + '&center=' + mapButton.value + 'key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI';
+            //     console.log(mapRequestURL);
+            //     map.src = mapRequestURL;
+            //     // generateMap(mapButton.value);
+            // })
 
         }
 
@@ -93,28 +112,17 @@ function generateBreweryData (cityName) {
     })
 }
 
-generateBreweryData();
-
-input.addEventListener("keydown", function(event) {
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      formSubmit(event);
-    }
-  });
-
-// function generateMap (breweryLocation) {
-//     // map.innerHTML = "";
-//     console.log(breweryLocation);
-
-//     // apiKey = "hNNynQKgGNZYjm3yv3iNIOnlcdiwyX5f";
-
-//     var mapRequestURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=350x300&scale=1&maptype=roadmap&markers=size%3Alrg%7Ccolor%3Ablack%7C' + breweryLocation + '&center=' + breweryLocation + 'key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI';
-//     console.log(mapRequestURL);
 
 
-//     map.src = mapRequestURL;
+// generateBreweryData();
+
+
+
+function generateMap (breweryLocation) {
+    console.log(breweryLocation);
+    var mapRequestURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=350x300&scale=1&maptype=roadmap&markers=size%3Alrg%7Ccolor%3Ablack%7C' + breweryLocation + '&center=' + breweryLocation + 'key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI';
+    console.log(mapRequestURL);
+    map.src = mapRequestURL;
     
-
-
-// }
+}
 

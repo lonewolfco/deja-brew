@@ -46,6 +46,7 @@ body {
 #breweries-list {
   height: 480px;
   overflow: auto;
+  margin-left: 10px;
 }
 
 .brew-name {
