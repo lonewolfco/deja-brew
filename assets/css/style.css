@@ -34,6 +34,7 @@ body {
   margin-top: 70px;
 }
 
+
 #map-card {
   background-color: var(--secondary);
   border-radius: 0px 0px 15px 15px;
@@ -42,11 +43,16 @@ body {
 #map-container {
   border-radius: 0px 0px 15px 15px;
 }
-
+h2{
+    background: #D4A71B;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-bottom: 15px;
+}
 #breweries-list {
   height: 480px;
   overflow: auto;
-  margin-left: 10px;
+  padding-left: 15px;
 }
 
 .brew-name {
