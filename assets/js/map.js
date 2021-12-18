@@ -1,16 +1,23 @@
 // declare variables
 var map = document.querySelector("#map");
+var input = document.querySelector("#search");
 // var breweryLocation = 'Vashon,WA';
 var tableContainer = document.querySelector("#brewery-table");
 
-
+function formSubmit(event) {
+    event.preventDefault();
+    var cityName = input.value;
+    generateBreweryData(cityName);
+    console.log(cityName);
+    input.value = "";
+  }
 
 
 function generateBreweryData (cityName) {
     tableContainer.innerHTML = "";
     console.log(cityName);
 
-    cityName = "Vashon";
+    // cityName = "Vashon";
 
     var brewRequestURL = "https://api.openbrewerydb.org/breweries?by_city=" + cityName;
 
@@ -23,7 +30,7 @@ function generateBreweryData (cityName) {
 
 
         // for loop to create table elements
-        for (let i =0; i < 5; i++) {
+        for (let i =0; i < data.length; i++) {
 
             var rowEl = document.createElement('tr');
             tableContainer.append(rowEl);
@@ -88,6 +95,12 @@ function generateBreweryData (cityName) {
 
 generateBreweryData();
 
+input.addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      formSubmit(event);
+    }
+  });
 
 // function generateMap (breweryLocation) {
 //     // map.innerHTML = "";
