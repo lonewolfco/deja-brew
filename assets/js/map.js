@@ -56,9 +56,15 @@ function generateBreweryData (cityName) {
             brewName.classList.add("brew-name");
             brewName.textContent = data[i].name + " [" + data[i].brewery_type + "]" ;
 
-
             var breweryAddress = document.createElement('p');
-            breweryAddress.textContent = data[i].street + " " + data[i].city + ", " + data[i].state + " " + data[i].postal_code;
+            var addressFull = "";
+            if (data[i].street) {
+              addressFull += data[i].street + " " + data[i].city + ", " + data[i].state + " " + data[i].postal_code;
+            } else {
+              "brew-name".remove();
+            }
+
+            breweryAddress.textContent = addressFull;
 
             var brewWebsite = document.createElement('a');
             brewWebsite.classList.add("brew-website");
