@@ -32,8 +32,9 @@ body {
 
 /* shows border of the container elements for each sides content */
 #main-container {
+    width: 50%
     margin-top: 70px;
-}
+    
 
 
 
@@ -46,6 +47,10 @@ body {
     border-radius: 0px 0px 15px 15px;
 }
 
+#breweries-list {
+    height: 420px;
+    overflow: auto;
+}
 
 .brew-name {
     font-weight: bolder;
