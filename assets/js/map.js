@@ -10,7 +10,7 @@ function generateBreweryData (cityName) {
     tableContainer.innerHTML = "";
     console.log(cityName);
 
-    cityName = "Kalamazoo";
+    cityName = "Vashon";
 
     var brewRequestURL = "https://api.openbrewerydb.org/breweries?by_city=" + cityName;
 
@@ -48,15 +48,15 @@ function generateBreweryData (cityName) {
             var buttonContainer = document.createElement('td');
             // rowContent.classList.add("col s4");
             
-            var buttonValue = data[i].longitude + ", " + data[i].latitude;
+            var buttonValue = data[i].latitude + ", " + data[i].longitude;
             console.log(buttonValue);
-
             // buttons to view the brewery on a map
             var mapButton = document.createElement('button');
             mapButton.className = "btn waves-effect grey darken-4";
             mapButton.setAttribute("type", "submit");
-            mapButton.textContent = "See on Map!";
-            mapButton.setAttribute = ("value", buttonValue);
+            mapButton.textContent = "View on the Map!";
+            mapButton.setAttribute("data-cord", buttonValue);
+            console.log(mapButton.dataset.cord);
             // icon on the map buttons
             var btnIcon = document.createElement("i");
             btnIcon.className = "material-icons right";
@@ -70,7 +70,14 @@ function generateBreweryData (cityName) {
             rowEl.append(rowContent, buttonContainer);
             rowContent.append(brewName, breweryAddress, brewWebsite);
 
-
+            mapButton.addEventListener("click",function(event) {
+                event.target.dataset.cord;
+                map.src="";
+                var mapRequestURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=350x300&scale=1&maptype=roadmap&markers=size%3Alrg%7Ccolor%3Ablack%7C' + mapButton.dataset.cord + '&center=' + mapButton.dataset.cord + 'key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI';
+                console.log(mapRequestURL);
+                map.src = mapRequestURL;
+                // generateMap(mapButton.value);
+            })
 
         }
 
@@ -82,19 +89,19 @@ function generateBreweryData (cityName) {
 generateBreweryData();
 
 
-// function generateMap () {
+// function generateMap (breweryLocation) {
 //     // map.innerHTML = "";
+//     console.log(breweryLocation);
 
+//     // apiKey = "hNNynQKgGNZYjm3yv3iNIOnlcdiwyX5f";
 
-//     apiKey = "hNNynQKgGNZYjm3yv3iNIOnlcdiwyX5f";
+//     var mapRequestURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=350x300&scale=1&maptype=roadmap&markers=size%3Alrg%7Ccolor%3Ablack%7C' + breweryLocation + '&center=' + breweryLocation + 'key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI';
+//     console.log(mapRequestURL);
 
-//     // var mapResquestURL = 'https://open.mapquestapi.com/staticmap/v5/map?key=' + apiKey + 'locations=' + breweryLocation + '|marker-lg-24135E-000000&size=600,500@2x';
-//     // var mapResquestURL = 'https://open.mapquestapi.com/staticmap/v5/map?key=' + apiKey + '&locations=3307%20Stadium%20Dr,%20Kalamazoo,%20MI%7Cmarker-lg-24135E-000000&size=600,500@2x';
-//     var mapRequestURL = 'https://maps.googleapis.com/maps/api/staticmap?size=500x400&scale=2&maptype=hybrid%5C&markers=size%3Amid%7Ccolor%3Ablack%7C' + breweryLocation + '&center=' + breweryLocation + 'key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI';
-
-//     // need brewery api information to pull in brewery data
 
 //     map.src = mapRequestURL;
     
 
-// 
+
+// }
+
