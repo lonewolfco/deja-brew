@@ -9,8 +9,18 @@ FDFFFC - WHITISH YELLOW
 Materialize CSS v 1.0.0
 */
 
+:root {
+    --primary: #FFC733;
+    --secondary: #D4A71B;
+    --content-background: #ECE6D3;
+    --content-containers: #DACDA9;
+    --body-background: #FDFFFC;
+
+
+}
+
 body {
-    background-color: #ECE6D3;
+    background-color: var(--body-background);
 }
 
 #nav-wrapper, #logoImg {
@@ -19,30 +29,22 @@ body {
     padding-right: .5%;
 }
 
-/* flex container for the main container elements */
-#flex {
-    display: flex;
-    margin: auto;
-}
 
 /* shows border of the container elements for each sides content */
 #main-container {
-    align-content: center;
-    /* border: 5px black solid; */
-    margin-top: 100px;
     width: 50%
+    margin-top: 70px;
     
-}
 
-.content-container {
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+
+
+#map-card{
+    background-color: var(--secondary);
+    border-radius: 0px 0px 15px 15px;
 }
 
 #map-container {
-    background-color: #FDFFFC;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    height: 500px;
-    border-radius:15px;
+    border-radius: 0px 0px 15px 15px;
 }
 
 #breweries-list {
@@ -50,18 +52,10 @@ body {
     overflow: auto;
 }
 
-#content-title {
-    background-color: #D4A71B;
-    padding: 10px;
-    justify-content: flex-start;
-    border-radius:15px 15px 0px 0px;
+.brew-name {
+    font-weight: bolder;
 }
 
-#map-element {
-    height: 100px;
-    background-color: #DACDA9;
-    margin-top: 50px;
-    border-radius: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
+.brew-website {
+    text-decoration: underline;
 }
