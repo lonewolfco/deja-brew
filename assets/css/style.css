@@ -10,52 +10,48 @@ Materialize CSS v 1.0.0
 */
 
 :root {
-    --primary: #FFC733;
-    --secondary: #D4A71B;
-    --content-background: #ECE6D3;
-    --content-containers: #DACDA9;
-    --body-background: #FDFFFC;
-
-
+  --primary: #ffc733;
+  --secondary: #d4a71b;
+  --content-background: #ece6d3;
+  --content-containers: #dacda9;
+  --body-background: #fdfffc;
 }
 
 body {
-    background-color: var(--body-background);
+  background-color: var(--body-background);
 }
 
-#nav-wrapper, #logoImg {
-    height: 64px;
-    padding-left: 1%;
-    padding-right: .5%;
+#nav-wrapper,
+#logoImg {
+  height: 64px;
+  padding-left: 1%;
+  padding-right: 0.5%;
 }
-
 
 /* shows border of the container elements for each sides content */
 #main-container {
-    width: 50%
-    margin-top: 70px;
-    
+  width: 50%;
+  margin-top: 70px;
+}
 
-
-
-#map-card{
-    background-color: var(--secondary);
-    border-radius: 0px 0px 15px 15px;
+#map-card {
+  background-color: var(--secondary);
+  border-radius: 0px 0px 15px 15px;
 }
 
 #map-container {
-    border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 15px 15px;
 }
 
 #breweries-list {
-    height: 420px;
-    overflow: auto;
+  height: 480px;
+  overflow: auto;
 }
 
 .brew-name {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 .brew-website {
-    text-decoration: underline;
+  text-decoration: underline;
 }
