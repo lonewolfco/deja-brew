@@ -67,7 +67,25 @@ h2{
     border-top-right-radius: 5px;
     /* padding-bottom: 5px; */
     /* color: #FFFFFF; */
+    font-family: 'Allerta Stencil', sans-serif;
 }
+
+a {
+    font-family: 'Allerta Stencil', sans-serif;
+}
+
+p {
+    font-family: 'Changa', sans-serif;
+}
+
+th {
+    font-family: 'Allerta Stencil', sans-serif;
+}
+
+#nav-btn {
+    font-family: 'Changa', sans-serif;
+}
+
 #breweries-list {
   height: 500px;
   overflow: auto;
