@@ -15,6 +15,8 @@ Materialize CSS v 1.0.0
   --content-background: #ece6d3;
   --content-containers: #dacda9;
   --body-background: #fdfffc;
+  --header-font: 'Allerta Stencil', sans-serif;
+  --body-font: 'Changa', sans-serif;
 }
 
 body {
@@ -40,12 +42,6 @@ body {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-/* shows border of the container elements for each sides content */
-/* #main-container {
-
-  margin-top: 70px;
-} */
-
 #body-container {
     margin-top: 45px;
 }
@@ -57,42 +53,32 @@ body {
 
 #map-container {
   border-radius: 0px 0px 15px 15px;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 
-#body-container {
-    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-}
 
-h2{
-    /* background: #0e0d0dde; */
+h2 {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    /* border: 2px dotted #0e0d0dde; */
-    /* padding-bottom: 5px; */
-    /* color: #FFFFFF; */
     font-family: 'Allerta Stencil', sans-serif;
     text-shadow: 2px 2px 4px #685620;
 }
 
 
-a {
-    font-family: 'Allerta Stencil', sans-serif;
+a, th, h2 {
+    font-family: var(--header-font);
 }
 
-p {
-    font-family: 'Changa', sans-serif;
+p, #nav-btn {
+    font-family: var(--body-font);
 }
 
-th {
-    font-family: 'Allerta Stencil', sans-serif;
-}
 
-#nav-btn {
-    font-family: 'Changa', sans-serif;
+#brew-container {
+    margin-left: 40px;
+    
 }
-
 
 #breweries-list {
   height: 500px;
@@ -102,6 +88,7 @@ th {
 
 .brew-name {
   font-weight: bolder;
+  font-size: 18px;
 }
 
 .brew-website {
