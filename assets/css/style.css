@@ -21,6 +21,14 @@ body {
   background-color: var(--body-background);
 }
 
+#search {
+    background-color: #202220d2;
+}
+
+#search, select, textarea {
+    color: white;
+  }
+
 #nav-wrapper,
 #logoImg {
   height: 64px;
@@ -28,12 +36,19 @@ body {
   padding-right: 0.5%;
 }
 
-/* shows border of the container elements for each sides content */
-#main-container {
-  width: 50%;
-  margin-top: 70px;
+#nav-wrapper {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
+/* shows border of the container elements for each sides content */
+/* #main-container {
+
+  margin-top: 70px;
+} */
+
+#body-container {
+    margin-top: 45px;
+}
 
 #map-card {
   background-color: var(--secondary);
@@ -42,16 +57,18 @@ body {
 
 #map-container {
   border-radius: 0px 0px 15px 15px;
+  margin-top: 30px;
 }
 
 h2{
-    background: #D4A71B;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    padding-bottom: 15px;
+    /* background: #0e0d0dde; */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    /* padding-bottom: 5px; */
+    /* color: #FFFFFF; */
 }
 #breweries-list {
-  height: 480px;
+  height: 500px;
   overflow: auto;
   padding-left: 15px;
 }
