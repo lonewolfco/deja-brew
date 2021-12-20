@@ -60,13 +60,20 @@ body {
   margin-top: 30px;
 }
 
+
+#body-container {
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
 h2{
     /* background: #0e0d0dde; */
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    /* border: 2px dotted #0e0d0dde; */
     /* padding-bottom: 5px; */
     /* color: #FFFFFF; */
 }
+
 #breweries-list {
   height: 500px;
   overflow: auto;
