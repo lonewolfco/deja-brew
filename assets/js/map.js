@@ -61,10 +61,16 @@ function generateBreweryData (cityName) {
 
             var breweryAddress = document.createElement('p');
             var addressFull = "";
+            
             if (data[i].street) {
               addressFull += data[i].street + " " + data[i].city + ", " + data[i].state + " " + data[i].postal_code;
-            } else {
-              "brew-name".remove();
+            }
+            else {
+              rowEl.remove();
+            }
+
+            if(data[i].brewery_type==="closed") {
+                rowEl.remove();
             }
 
             breweryAddress.textContent = addressFull;
@@ -112,7 +118,7 @@ function generateBreweryData (cityName) {
 
             // mapButton.addEventListener("click",function() {
             //     map.src="";
-            //     var mapRequestURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=350x300&scale=1&maptype=roadmap&markers=size%3Alrg%7Ccolor%3Ablack%7C' + mapButton.value + '&center=' + mapButton.value + 'key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI';
+            //     var mapRequestURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=300x200&scale=1&maptype=roadmap&markers=size%3Alrg%7Ccolor%3Ablack%7C' + mapButton.value + '&center=' + mapButton.value + 'key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI';
             //     console.log(mapRequestURL);
             //     map.src = mapRequestURL;
             //     // generateMap(mapButton.value);
