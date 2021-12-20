@@ -18,37 +18,47 @@
 </head>
 <body>
     <header>
-      <nav>
-          
+
+      <!-- dropdown content container for the search history dropdown -->
+      <ul id="dropdown1" class="dropdown-content">
+        <li>
+          <button id="clear-btn" type="submit" class="btn waves-effect grey darken-4">Clear</button>
+        </li>
+      </ul>
+
+      <!-- navbar begin -->
+      <nav>          
         <div class="nav-wrapper #ffca28 amber lighten-1">
             <img id="logoImg" src="./assets/images/blackoutline.png">
             <a href="#" class="brand-logo">Deja Brew</a>
             <ul id="nav-mobile" class="right ">
-              <li><a href="sass.html">Favorites</a></li>
               <li><a href="badges.html">About</a></li>
+              <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">History<i class="material-icons right">arrow_drop_down</i></a>
+              </li>
             </ul>
           </div>
 
-    <div>
-        <form">
-          <div class="input-field">
-            <input id="search" placeholder="Enter city..." type="search" required>
-            <label class="label-icon" for="search"><i class="material-icons"> </i></label>
-            <i class="material-icons">close</i>
+            <!-- search bar begin -->
+          <div>
+              <form>
+                <div class="input-field">
+                  <input id="search" placeholder="Enter city..." type="search" required>
+                  <label class="label-icon" for="search"><i class="material-icons"> </i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form>
           </div>
-        </form>
-      </div>
-  </nav>
+    </nav>
+
     </header>
-    <br>
-    <br>
+
 
     <main>
       <!-- flex container for the two sections (brewery list & static map) of the main content -->
       <div id ="body-container" class="row">
 
           <!-- Static Map Content Container -->
-                <div class="col s12 m12 l5">
+                <div class="col s12 m12 l4 left">
                   <div id="map-container"class="card z-depth-3">
                     <div id = "map-image" class="card-image">
                       <img id= "map" alt="map" src="./assets/images/bottlecap.png">
@@ -64,7 +74,7 @@
 
         <!-- Brewery Data Content Container -->
 
-        <div id="brew-container" class="col s12 m12 l7">
+        <div id="brew-container" class="col s12 m12 l7 right">
             <h2 class ="center-align" >Breweries</h2>
              <div id = "breweries-list">
         
@@ -95,7 +105,8 @@
     <footer></footer>
 
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
+    <script type ="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="./assets/js/map.js"></script>
 
 </body>
