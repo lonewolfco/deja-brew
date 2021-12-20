@@ -42,12 +42,6 @@ body {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-/* shows border of the container elements for each sides content */
-/* #main-container {
-
-  margin-top: 70px;
-} */
-
 #body-container {
     margin-top: 45px;
 }
@@ -64,9 +58,11 @@ body {
 
 
 
-h2{
+h2 {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    font-family: 'Allerta Stencil', sans-serif;
+    text-shadow: 2px 2px 4px #685620;
 }
 
 
