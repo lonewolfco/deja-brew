@@ -61,26 +61,19 @@ function generateBreweryData (cityName) {
                     brewName.classList.add("brew-name");
                     brewName.textContent = data[i].name + " [" + data[i].brewery_type + "]" ;
 
-            var breweryAddress = document.createElement('p');
-            var addressFull = "";
-            
-            if (data[i].street) {
-              addressFull += data[i].street + " " + data[i].city + ", " + data[i].state + " " + data[i].postal_code;
-            }
-            else {
-              rowEl.remove();
-            }
-
-            if(data[i].brewery_type==="closed") {
-                rowEl.remove();
-            }
-
-
-                    // if else to remove any breweries that feature null address data
+                    var breweryAddress = document.createElement('p');
+                    var addressFull = "";
+                    
+                                        // if else to remove any breweries that feature null address data
                     if (data[i].street) {
                     addressFull += data[i].street + " " + data[i].city + ", " + data[i].state + " " + data[i].postal_code;
-                    } else {
+                    }
+                    else {
                     rowEl.remove();
+                    }
+
+                    if(data[i].brewery_type==="closed") {
+                        rowEl.remove();
                     }
 
                     breweryAddress.textContent = addressFull;
