@@ -2,9 +2,10 @@
 var map = document.querySelector("#map");
 var input = document.querySelector("#search");
 let coordinates = JSON.parse(localStorage.getItem("brewcord")) || [];
-// var mapBtnClick = document.querySelector("map-btn");
+let history = JSON.parse(localStorage.getItem("search-history")) || [];
 // var breweryLocation = 'Vashon,WA';
 var tableContainer = document.querySelector("#brewery-table");
+// var mapBtn = document.querySelector(".map-btn");
 
 
 input.addEventListener("keydown", function(event) {
@@ -21,6 +22,8 @@ function formSubmit(event) {
     event.preventDefault();
     var cityName = input.value;
     generateBreweryData(cityName);
+    history.push(cityName);
+    localStorage.setItem("search-history", JSON.stringify(history));
     console.log(cityName);
     input.value = "";
   }
@@ -77,21 +80,25 @@ function generateBreweryData (cityName) {
             console.log(coordinates);
 
                 // buttons to view the brewery on a map
-                var mapButton = document.createElement('button');
+                const mapButton = document.createElement('button');
                 mapButton.className = " map-btn btn waves-effect grey darken-4";
                 mapButton.setAttribute("type", "submit");
-                mapButton.textContent = "View on Map!";
+                mapButton.textContent = "Map it!";
                 mapButton.setAttribute("value", coordinates[i]);
                 // mapButton.setAttribute("data-cord", buttonValue);
                 // console.log(mapButton.dataset.cord);
                 // icon on the map buttons
                 var btnIcon = document.createElement("i");
-                btnIcon.className = "material-icons right";
+                btnIcon.className = "material-icons left";
                 btnIcon.textContent = "location_searching";
                 mapButton.append(btnIcon);
       
                 buttonContainer.append(mapButton);
-                // mapButton.addEventListener("click", generateMap(mapButton.value));
+                // const mapBtn = document.querySelector(".map-btn");
+                mapButton.addEventListener("click", event => {
+                    console.log(event.target.value);
+                    generateMap(event.target.value);
+                })
           
             
             rowEl.append(rowContent, buttonContainer);
@@ -120,9 +127,14 @@ function generateBreweryData (cityName) {
 
 function generateMap (breweryLocation) {
     console.log(breweryLocation);
-    var mapRequestURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=350x300&scale=1&maptype=roadmap&markers=size%3Alrg%7Ccolor%3Ablack%7C' + breweryLocation + '&center=' + breweryLocation + 'key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI';
+    var mapRequestURL = 'https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=250x250&scale=2&maptype=roadmap&markers=size%3Alrg%7Ccolor%3Ablack%7C' + breweryLocation + '&center=' + breweryLocation + '&key=AIzaSyBPtCzgyimy69Svl3-LRgwO47gFXn8XAyI';
     console.log(mapRequestURL);
     map.src = mapRequestURL;
     
 }
+
+// mapBtn.addEventListener("submit", event => {
+//     console.log(event.target.value);
+//     generateMap(event.target.value);
+// })
 
