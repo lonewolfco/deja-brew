@@ -17,7 +17,6 @@ input.addEventListener("keydown", function(event) {
       localStorage.removeItem("brewcord");
       coordinates = [];
       formSubmit(event);
-      location.reload();
     }
   });
 
@@ -129,6 +128,7 @@ function generateBreweryData (cityName) {
 
     // function to create the search history buttons
     function renderSearchHistBtns() {
+        histContainer.innerHTML = "";
         for (let i=0; i<history.length; i++) {
             const historyLI = document.createElement("li");
             histContainer.append(historyLI);
