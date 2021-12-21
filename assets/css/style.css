@@ -25,21 +25,24 @@ body {
 
 #search {
     background-color: #202220d2;
+    width: 100vw;
 }
 
 #search, select, textarea {
     color: white;
   }
 
-#nav-wrapper,
-#logoImg {
+#nav {
   height: 64px;
-  padding-left: 1%;
-  padding-right: 0.5%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  padding-bottom: 15px;
+  width: 100vw;
 }
 
-#nav-wrapper {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+#deja-brew {
+  position: relative;
+  margin-left: 10px;
 }
 
 #body-container {
@@ -93,4 +96,8 @@ p, #nav-btn {
 
 .brew-website {
   text-decoration: underline;
+}
+
+.hide {
+  display: hidden;
 }

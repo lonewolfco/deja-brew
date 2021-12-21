@@ -6,9 +6,15 @@ let history = JSON.parse(localStorage.getItem("search-history")) || [];
 var tableContainer = document.querySelector("#brewery-table");
 var histContainer = document.querySelector("#dropdown1");
 var clearBtn = document.querySelector("#clear-btn");
+// var searchBtn = document.querySelector(".search-btn");
+// var searchField = document.querySelector(".search-field");
 
 // activates the history dropdown in the navbar
 $('.dropdown-trigger').dropdown();
+
+// searchBtn.addEventListener("click", function (){
+//     searchField.classList.remove("hide");
+// })
 
 // event listener when the enter key is pressed while the user has their cursor in the search bar
 input.addEventListener("keydown", function(event) {
@@ -17,6 +23,7 @@ input.addEventListener("keydown", function(event) {
       localStorage.removeItem("brewcord");
       coordinates = [];
       formSubmit(event);
+    //   location.reload();
     }
   });
 
