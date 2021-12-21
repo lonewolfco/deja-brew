@@ -17,6 +17,7 @@ input.addEventListener("keydown", function(event) {
       localStorage.removeItem("brewcord");
       coordinates = [];
       formSubmit(event);
+      location.reload();
     }
   });
 
