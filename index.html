@@ -27,29 +27,28 @@
       <!-- dropdown content container for the search history dropdown -->
       <ul id="dropdown1" class="dropdown-content">
         <li>
-          <button id="clear-btn" type="submit" class="btn waves-effect grey darken-4">Clear</button>
+          <!-- <button id="clear-btn" type="submit" class="btn waves-effect grey darken-4">Clear</button> -->
         </li>
       </ul>
 
       <!-- navbar begin -->
-      <nav>          
-        <div class="nav-wrapper #ffca28 amber lighten-1">
-            <img id="logoImg" src="./assets/images/blackoutline.png">
-            <a href="#" class="brand-logo">Deja Brew</a>
+      <nav id="nav" class="amber lighten-1">           
+        <div class="nav-wrapper">
+            <img id="logoImg" alt="two beers clinking icon" width="70" height="64" class="left" src="./assets/images/blackoutline.png">
+            <a href="#" class="brand-logo left" id="deja-brew" >Deja Brew</a>
 
             <ul id="nav-mobile" class="right ">
-
-              <li><a href="badges.html">About</a></li>
               <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">History<i class="material-icons right">arrow_drop_down</i></a>
               </li>
+              <li><a id="clear-btn">Clear</a></li>
             </ul>
           </div>
 
             <!-- search bar begin -->
           <div>
-              <form>
-                <div class="input-field">
-                  <input id="search" placeholder="Enter city..." type="search" required>
+              <form class="search-field">
+                <div class="input-field ">
+                  <input id="search" class="" placeholder="Enter city..." type="search" required>
                   <label class="label-icon" for="search"><i class="material-icons"> </i></label>
                   <i class="material-icons">close</i>
                 </div>
